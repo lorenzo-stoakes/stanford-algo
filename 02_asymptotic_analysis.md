@@ -23,16 +23,23 @@ Looking at a graphical representation:-
 
 Here we see that above a certain n, 2f(n) is always greater than T(n).
 
-Our formal definition:-
+Formal definition:-
 
-T(n) = O(f(n)) if and only if there exist constants c, n\_0 > 0 such that T(n) <= c.f(n) for all
-n >= n\_0.
+    [; T(n) = O(f(n)) ;]
 
-If we go back to the image and look for c and n_0 we have:-
+iff:-
+
+    [; \exists c, n_0 > 0 ;]
+
+Such that:-
+
+    [; T(n) \leq c.f(n) \forall n \geq n_0 ;]
+
+If we go back to the image and look for c and n\_0 we have:-
 
 <img src="http://codegrunt.co.uk/images/algo/2-big-oh-notation-2.png" />
 
-We can consider this in terms of a game, where we pick c and n_0, and our opponent can pick any
+We can look at this in terms of a game, where we pick c and n_0, and our opponent can pick any
 n larger than n\_0 and see if they can have T(n) come below n\_0. T(n) is O(f(n)) only if you
 can always win with f(n).
 
