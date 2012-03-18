@@ -86,4 +86,103 @@ discusses this further.
 
 ### Example #2 ###
 
+This is something of a non-example - i.e. something is *not* big-oh of something else.
 
+Claim: For every k >= 1 n^k is *not* O(n^{k-1}).
+
+Proof: By contradiction.
+
+Let's assume n^k = O(n^{k-1})
+
+Then:-
+
+    [; \exists c, n_0 > 0 ;]
+
+Such that:-
+
+    [; n^k \leq c.n^{k-1} \forall n \geq n_0 ;]
+
+If we cancel n^{k-1} from both sides, then we have:-
+
+    [; n \leq c \forall n \geq n_0 ;]
+
+Which is patently not true, e.g. n = c + 1.
+
+Big Omega and Theta
+-------------------
+
+Big Oh is the most important and ubiquitous concept in this analysis, but for completeness we
+look at Big Omega and Big Theta.
+
+### Omega Notation ###
+
+Definition:
+
+    [; T(n) = \Omega(f(n)) ;]
+
+iff there exist constants c, n_0 such that:-
+
+    [; T(n) \geq c . f(n) \forall n \geq n_0 ;]
+
+Looking at this pictorially:-
+
+<img src="http://codegrunt.co.uk/images/algo/2-big-oh-notation-3.png" />
+
+### Theta Notation ###
+
+Definition:-
+
+    [; T(n) = \Theta(f(n)) ;]
+
+iff:-
+
+    [; T(n) = O(f(n)) ;]
+    [; T(n) = \Omega(f(n)) ;]
+
+There exist constants:-
+
+    [; c_1, c_2, n_0 ;]
+
+Such that:-
+
+    [; c_1 f(n) \leq T(n) \leq c_2 f(n) ;]
+
+For all:-
+
+    [; n \geq n_0 ;]
+
+We typically don't need to make a stronger statement that the use of theta would imply, as
+we're typically interested in upper bounds, and saying O(f(n)) suffices.
+
+E.g.:-
+
+    [; T(n) = \frac{1}{2}n^2 + 3n ;]
+
+We can say:-
+
+    [; T(n) = \Omega(n) ;]
+    [; T(n) = \Theta(n^2) ;]
+    [; T(n) = O(n^3) ;]
+
+Even though the lower and upper bounds are not great choices.
+
+### Little-Oh Notation ###
+
+This is not used very often, but is worth covering.
+
+Definition :-
+
+    [; T(n) = o(f(n)) ;]
+
+iff for all constants c > 0 there exists a constant n_0 such that:-
+
+    [; T(n) \leq c . f(n) \forall n \geq n_0 ;]
+
+This is quite a lot stronger than the big-oh definition, as we assert this for *all* constants,
+rather than one particular one.
+
+Exercise:-
+
+Show that:-
+
+    [; \forall k \geq 1, n^{k-1} = o(n^k) ;] 
