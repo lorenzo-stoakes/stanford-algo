@@ -350,4 +350,125 @@ Looking at the claim we provided earlier:-
 
 For every input array of n numbers, Merge Sort produces a sorted output array and uses at most 6n lg(n) + 6n operations.
 
-How are we going to prove this claim (assuming n is a power of 2)? Using a recursion tree. We'll draw the elements.
+How are we going to prove this claim (assuming n is a power of 2)? Using a recursion tree. We'll draw the elements:-
+
+<img src="http://codegrunt.co.uk/images/algo/1-introduction-1.png" />
+
+The lowest level is lg(n), since we're dividing each node's element count by 2 on each level in the tree, which is exactly the definition of lg(n) we gave earlier.
+
+Give we start at level 0, this leaves us with a total of lg(n) + 1 levels to deal with.
+
+At each level j=0,1,2,...,lg n there are 2^j subproblems, each of size n/2^j.
+
+### Proof of Claim (assuming n = power of 2) ###
+
+Merge sort is essentially very simple, there are two recursive lines of code, followed by a call to the merge function.
+
+We ignore the recursive calls for the time being, and look only at the merge call.
+
+We know already that the merge call requires:-
+
+    <= 6m
+
+Lines of code.
+
+At each level there are 2^j subproblems, each of size n/2^j. We simply multiply the number of level-j subproblems vs the number of executions required for the subproblem size to get the total run time at level j:-
+
+<img src="http://codegrunt.co.uk/images/algo/1-introduction-2.png" />
+
+NOte that 2^j cancels out and it turns out that we still have an upper bound of:-
+
+    <= 6n
+
+This is because of a perfect equilibrium between two forces - the number of subproblems is doubling, but the amount of work done is halving each level.
+
+We can now get the total number of execution steps required for the algorithm by multiplying the number of levels by the work required on each level, e.g.:-
+
+    (lg(n) + 1) . 6n
+
+So our upper bound is, as previously claimed:-
+
+    6n . (lg(n) + 1)
+
+Guding Principles for Analysis of Algorithms
+--------------------------------------------
+
+Let's look at 3 biases/assumptions we made when we performed the analysis of merge sort. These are assumptions we will be making throughout the rest of the course.
+
+### Guiding Principle #1 ###
+
+We look at the *worst-case* - we are performing "worst-case analysis".
+
+Our running time bound holds for *every* input of length n.
+
+As opposed to alternative analysis approaches:-
+
+* "average-case" analysis - We look at expected input and base our analysis on this, e.g. considering that each possible input is equally likely.
+
+* Benchmarks - We have some convoluted input sets which we consider represent real-world input.
+
+For either of these alternatives we need domain knowledge of the problem space to be able to choose appropriate inputs.
+
+On the contrary, worst-case analysis requires no prior knowledge. This is particularly appropriate for 'general-purpose' routines.
+
+Worst-case analysis is typically more mathematically tractable than these alternatives.
+
+### Guiding Principle #2 ###
+
+We won't pay much attention to constant factors, or lower-order terms.
+
+We saw this in the merge sort analysis - we moved from 4n + 2 to 6n.
+
+Justifications
+--------------
+
+1. Considerably easier, mathematically!
+
+2. Constants depend on architecture/compiler/programmer in any case.
+
+3. Lose very little predictive power. We will see this.
+
+### Guiding Principle #3 ###
+
+We're performing *asymptotic analysis*. We're considering large input sizes - we're focusing on running time for *large* input sizes n.
+
+E.g.:-
+
+    6n lg n + 6n
+
+Is better than:-
+
+    0.5n^2
+
+This is true iff n is large.
+
+Justifications
+--------------
+
+Only big problems are interesting. E.g. sorting 100 numbers will be quick no matter of the algorithm choice.
+
+A corollary of Moore's law is that as computers get more powerful, we will run algorithms against ever larger datasets, and the gulf between an n^2 and an n.lg(n) algorithm will only get larger. 
+
+To drive the point home, consider the following graph comparing the run times of merge sort and insertion sort:-
+
+<img src="http://codegrunt.co.uk/images/algo/1-introduction-3.png" />
+
+We see that insertion sort is faster than merge sort *up to a point*, roughly n=90 here.
+
+This is even clearer if we increase the input size:-
+
+<img src="http://codegrunt.co.uk/images/algo/1-introduction-4.png" />
+
+All this doesn't mean you get to completely ignore constant factors. Often modern sorting algorithms switch between algorithms at small sizes to handle these cases.
+
+### What Is a "Fast" Algorithm? ###
+
+This course: Adopt these three biases as guiding principles.
+
+A fast algorithm is one where the worst-case running time grows slowly with the input size.
+
+We want a sweet spot - between mathematical tractability and predictive power. Worst-case asymptotic analysis fits this role.
+
+What do we mean by the running time growing slowly with input size?
+
+Our Holy grail is running time growing linearly with input size, or at least as close to it as we can manage.
