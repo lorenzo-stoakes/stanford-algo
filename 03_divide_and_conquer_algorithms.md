@@ -31,7 +31,7 @@ Inversions: (3,2), (5,2), (5,4)
 
 Pictorial representation:-
 
-<img src="http://codegrunt.co.uk/images/alg/3-divide-and-conquer-algorithms-1.png" />
+<img src="http://codegrunt.co.uk/images/algo/3-divide-and-conquer-algorithms-1.png" />
 
 Motivations:-
 
@@ -132,7 +132,7 @@ an element greater than __B__, this indicates that there is a split inversion.
 
 Looking at an example:-
 
-<img src="http://codegrunt.co.uk/images/alg/3-divide-and-conquer-algorithms-2.png" />
+<img src="http://codegrunt.co.uk/images/algo/3-divide-and-conquer-algorithms-2.png" />
 
 We see that when 2 is copied to the output, we have discovered the split inversions (3,2) and
 (5,2).
@@ -170,7 +170,7 @@ Strassen's Subcubic Matrix Multiplication Algorithm
 
 Let's consider 3 matrices, X, Y and Z:-
 
-<img src="http://codegrunt.co.uk/images/alg/3-divide-and-conquer-algorithms-3.png" />
+<img src="http://codegrunt.co.uk/images/algo/3-divide-and-conquer-algorithms-3.png" />
 
 We're not considering non-square matrices in this video.
 
@@ -185,7 +185,7 @@ The best we will be able to do with these matrices is an O(n^2) operation.
 
 ### Example (n=2) ###
 
-<img src="http://codegrunt.co.uk/images/alg/3-divide-and-conquer-algorithms-4.png" />
+<img src="http://codegrunt.co.uk/images/algo/3-divide-and-conquer-algorithms-4.png" />
 
 Our naive solution has running time of:-
 
@@ -203,11 +203,11 @@ Has running time of:-
 
 Idea: Divide into quadrants (blocks in matrix terminology):-
 
-<img src="http://codegrunt.co.uk/images/alg/3-divide-and-conquer-algorithms-5.png" />
+<img src="http://codegrunt.co.uk/images/algo/3-divide-and-conquer-algorithms-5.png" />
 
 ### Recursive Algorithm #1 ###
 
-<img src="http://codegrunt.co.uk/images/alg/3-divide-and-conquer-algorithms-6.png" />
+<img src="http://codegrunt.co.uk/images/algo/3-divide-and-conquer-algorithms-6.png" />
 
 Step 1: Recursively computer the 8 necessary products.
 
@@ -234,7 +234,7 @@ Very surprising result. Shows how clever approach can make a huge difference.
 
 For matrices:-
 
-<img src="http://codegrunt.co.uk/images/alg/3-divide-and-conquer-algorithms-7.png" />
+<img src="http://codegrunt.co.uk/images/algo/3-divide-and-conquer-algorithms-7.png" />
 
 The Seven Products:
 
@@ -248,5 +248,5 @@ The Seven Products:
 
 Claim: 
 
-<img src="http://codegrunt.co.uk/images/alg/3-divide-and-conquer-algorithms-8.png" />
+<img src="http://codegrunt.co.uk/images/algo/3-divide-and-conquer-algorithms-8.png" />
 
