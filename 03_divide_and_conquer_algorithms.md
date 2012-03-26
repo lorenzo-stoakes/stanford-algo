@@ -246,7 +246,7 @@ The Seven Products:
     [; P_6 = (B-D)(G+H) ;]
     [; P_7 = (A-c)(E+F) ;]
 
-Claim: 
+Claim:
 
 <img src="http://codegrunt.co.uk/images/algo/3-divide-and-conquer-algorithms-8.png" />
 
