@@ -6,7 +6,8 @@ Why Study Algorithms?
 
 What is an algorithm?
 
-An algorithm is essentially a well-defined set of rules/ recipe for solving a computational problem.
+An algorithm is essentially a well-defined set of rules/ recipe for solving a computational
+problem.
 
 E.g. you want to sort some numbers, find the shortest path in a network, etc. etc.
 
@@ -83,9 +84,12 @@ If we look at the equation we obtained previously:-
 
     x.y = (10^n)ac + 10^(n/2)(ad+bc) + bd
 
-We notice there are 4 products, but in fact there really are only three (due to Gauss) - ac, (ad + bc), bd.
+We notice there are 4 products, but in fact there really are only three (due to Gauss) - ac,
+(ad + bc), bd.
 
-We don't care about ad and bc separately, rather we care are the sum. This raises the question - is there a way of calculating this result with only 3 calls instead of 4? And it turns out there is. This is known as Karatsuba multiplication.
+We don't care about ad and bc separately, rather we care are the sum. This raises the question
+- is there a way of calculating this result with only 3 calls instead of 4? And it turns out
+there is. This is known as Karatsuba multiplication.
 
 Steps:-
 
@@ -103,7 +107,8 @@ Gives us:-
 
 Upshot: Only need 3 recursive multiplications (and some additions).
 
-The algorithm design space is incredibly rich. This is a great example - you wouldn't immediately guess there was so much depth to it.
+The algorithm design space is incredibly rich. This is a great example - you wouldn't
+immediately guess there was so much depth to it.
 
 Q: Which is the fastest algorithm? Hard to tell intuitively.
 
@@ -118,25 +123,36 @@ About the Course
 
 ### Course Topics ###
 
-The idea is to provide basic introduction to each. There is a lot more that can be said about all of these.
+The idea is to provide basic introduction to each. There is a lot more that can be said about
+all of these.
 
 * Vocab. for design + analysis of algorithms
 
-This is possibly one of the driest topics, but it's a pre-requisite for thinking about the design of algorithms.
+This is possibly one of the driest topics, but it's a pre-requisite for thinking about the
+design of algorithms.
 
-We'll start with Big-Oh notation. Conceptually, it's a modelling choice with which we measure the granularity with which we measure the performance metric of an algorithm like the running time.
+We'll start with Big-Oh notation. Conceptually, it's a modelling choice with which we measure
+the granularity with which we measure the performance metric of an algorithm like the running
+time.
 
-It turns out that a sweet spot for considering algorithm design is to ignore constants and lower-order terms and concentrate on how well algorithms scale with large input sizes.
+It turns out that a sweet spot for considering algorithm design is to ignore constants and
+lower-order terms and concentrate on how well algorithms scale with large input sizes.
 
 Big-Oh is a way of 'mathematicise' this sweet spot.
 
 * Divide and Conquer Algorithm Design Paradigm
 
-There's no silver bullet in algorithm design. No single method which 'unlocks' all the computational problems you're likely to face. There are however a few algorithm design techniques, high-level approaches which can be used successfully across a range of different problems.
+There's no silver bullet in algorithm design. No single method which 'unlocks' all the
+computational problems you're likely to face. There are however a few algorithm design
+techniques, high-level approaches which can be used successfully across a range of different
+problems.
 
-In this course, we'll only have to time to consider one such paradigm, namely divide-and-conquer algorithm design.
+In this course, we'll only have to time to consider one such paradigm, namely
+divide-and-conquer algorithm design.
 
-The idea is that we break a problem into smaller subproblems which we then solve recursively, and then to somehow quickly combine the solutions to the subproblems into a solution which solves the original problem.
+The idea is that we break a problem into smaller subproblems which we then solve recursively,
+and then to somehow quickly combine the solutions to the subproblems into a solution which
+solves the original problem.
 
 E.g. We saw two d&c approaches in the previous video.
 
@@ -147,9 +163,11 @@ We'll consider:-
 
 * Randomisation in algorithm design
 
-We essentially 'flip coins' in this approach - i.e. if you were to run the solution multiple times you would get different executions.
+We essentially 'flip coins' in this approach - i.e. if you were to run the solution multiple
+times you would get different executions.
 
-Totally un-intuitively, it turns out that allowing internal randomisation often leads to simple, elegant and practical solutions to computation problems.
+Totally un-intuitively, it turns out that allowing internal randomisation often leads to
+simple, elegant and practical solutions to computation problems.
 
 The canonical example is randomised quicksort, which we will look at in a few lectures.
 
@@ -157,17 +175,26 @@ We'll apply this technique to quicksort, primality testing, graph partitioning a
 
 * Primitives for reasoning about graphs
 
-One key skill to take away from the course is literacy with a number of computational primitives operating on data which are so fast that they are, essentially, free. The time it takes to invoke one of these computational primitives is barely more than the time you are already taking to examine the input. You should be applying it in case it is useful. E.g. sorting.
+One key skill to take away from the course is literacy with a number of computational
+primitives operating on data which are so fast that they are, essentially, free. The time it
+takes to invoke one of these computational primitives is barely more than the time you are
+already taking to examine the input. You should be applying it in case it is
+useful. E.g. sorting.
 
-We'll consider data which is complex in the form of a graph, which consists not only of a set of vertices, but also edges between pairs of vertices, this is a graph.
+We'll consider data which is complex in the form of a graph, which consists not only of a set
+of vertices, but also edges between pairs of vertices, this is a graph.
 
-Graphs model (amongst other things), different types of networks. Even though these are more complicated than, say, arrays, there are still a number of very fast primitive operations you can apply to graphs.
+Graphs model (amongst other things), different types of networks. Even though these are more
+complicated than, say, arrays, there are still a number of very fast primitive operations you
+can apply to graphs.
 
-In this class we will consider connectivity information, shortest paths, structure of information and social networks.
+In this class we will consider connectivity information, shortest paths, structure of
+information and social networks.
 
 * Use and implementation of data structures
 
-Data structures are often a crucial ingredient in the design of fast algorithms. Data structures are responsible for organising data in a such a way that suits fast queries.
+Data structures are often a crucial ingredient in the design of fast algorithms. Data
+structures are responsible for organising data in a such a way that suits fast queries.
 
 Different data structures are useful for different queries.
 
@@ -175,39 +202,60 @@ E.g. heaps, balance binary search trees, hashing and some variants (e.g. bloom f
 
 We'll consider two data structures in particular detail:-
 
-* Balanced Binary Search Trees - which dynamically maintain an ordering on a set of elements while supporting a number of queries which run in time logarithmic with respect to the size of the set.
+* Balanced Binary Search Trees - which dynamically maintain an ordering on a set of elements
+  while supporting a number of queries which run in time logarithmic with respect to the size
+  of the set.
+
 * Hash Set - Keep track of a dynamic set which supporting extremely fast lookup and insertion.
 
-We'll talk about canonical uses of these data structures and also what's going on 'under the hood' in such data structures.
+We'll talk about canonical uses of these data structures and also what's going on 'under the
+hood' in such data structures.
 
 ### Topics in Sequel Course ###
 
 These are topics which will be covered in Design and Analysis of Algorithms II.
 
 * Greedy algorithm design paradigm
+
 * Dynamic programming algorithm design paradigm
+
 * NP-complete problems and what to do about them - cannot be solved computationally efficiently
+
 * NP-complete: Fast heuristics with provable guarantees
+
 * NP-complete: Fast exact algorithms for special cases
+
 * NP-complete: Exact algorithms that beat brute-force search
 
 Depending on demand there might be further courses.
 
 ### Skills I Will Learn ###
 
-* Become a better programmer
-* Sharpen your mathematical and analytical skills - want to explain *why* we do things a certain way. Good algorithmic analysis typically requires non-trivial mathematics
-* Start 'thinking algorithmically', not just in computer science
-* Literacy with computer science's 'greatest hits'
-* Ace your technical interviews
+* Become a better programmer.
+
+* Sharpen your mathematical and analytical skills - want to explain *why* we do things a
+  certain way. Good algorithmic analysis typically requires non-trivial mathematics.
+
+* Start 'thinking algorithmically', not just in computer science.
+
+* Literacy with computer science's 'greatest hits'.
+
+* Ace your technical interviews.
 
 ### Who Are You? ###
 
 * It doesn't really matter. (It's a free course, after all).
+
 * Ideally, you know some programming.
-* You should be capable of translating high-level algos into working programs in *some* programming language, doesn't matter which.
+
+* You should be capable of translating high-level algos into working programs in *some*
+  programming language, doesn't matter which.
+
 * Some (perhaps rusty) mathematical experience. E.g. discrete maths, proofs by induction, etc.
-* Excellent free reference: "Mathematics for Computer Science" by Eric Lehman and Tom Leighton. Google it.
+
+* Excellent free reference: "Mathematics for Computer Science" by Eric Lehman and Tom
+  Leighton. Google it.
+
 * All annotated slides available from course site.
 
 For external sources, google Dasgupta/Papadimitriou/Vazirani, Algorithms - available online.
@@ -216,7 +264,8 @@ For external sources, google Dasgupta/Papadimitriou/Vazirani, Algorithms - avail
 
 * No grades per se (details on certificate TBA).
 
-* Weekly homework - tests understanding, synchronise students for discussion, intellectual challenge.
+* Weekly homework - tests understanding, synchronise students for discussion, intellectual
+  challenge.
 
 * Occasionally propose harder "challenge problems".
 
@@ -225,7 +274,8 @@ Merge Sort: Motivation and Example
 
 ### Why Study It? ###
 
-* Merge sort is an old algorithm, but it is still used heavily in the real world. Good introduction to divide + conquer.
+* Merge sort is an old algorithm, but it is still used heavily in the real world. Good
+  introduction to divide + conquer.
 
 Generally speaking, merge sort is an improvement over selection, insertion and bubble sorts.
 
@@ -242,7 +292,8 @@ Generally speaking, merge sort is an improvement over selection, insertion and b
 Input: array of n numbers, unsorted.
 Output: Same numbers, sorted in increasing order.
 
-For the purpose of this lecture, we assume the elements are distinct. Can look at ties as an additional piece of work.
+For the purpose of this lecture, we assume the elements are distinct. Can look at ties as an
+additional piece of work.
 
 In a picture:-
 
@@ -271,7 +322,8 @@ Let's look at the pseudocode for the merge step:-
     A = 1st sorted array [n/2]
     B = 2nd sorted array [n/2]
 
-We'll define three counter variables - i, j and k. We use i and j to traverse A and B respectively, and k to traverse C.
+We'll define three counter variables - i, j and k. We use i and j to traverse A and B
+respectively, and k to traverse C.
 
     i = 1
     j = 1
@@ -290,9 +342,11 @@ Again we're ignoring end cases, i.e. when we reach the end of A and B.
 
 What is the running time of the merge sort algorithm?
 
-We won't provide a really rigorous definition for 'running time' for the time being, we'll look at that later.
+We won't provide a really rigorous definition for 'running time' for the time being, we'll look
+at that later.
 
-Imagine we're running in a debugger and we're pressing enter to advance through the code, we're counting the number of times we press enter before the program terminates.
+Imagine we're running in a debugger and we're pressing enter to advance through the code, we're
+counting the number of times we press enter before the program terminates.
 
 Key Question: What is the running time of Merge Sort on an array of n numbers?
 
@@ -322,7 +376,8 @@ Running time of merge on array of m numbers is:-
 
     <= 4m + 2
 
-We can be pedantic about how we count these values, but ultimately the differences don't matter too much.
+We can be pedantic about how we count these values, but ultimately the differences don't matter
+too much.
 
 We can get even sloppier and just say:-
 
