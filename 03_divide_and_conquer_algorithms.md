@@ -1,5 +1,5 @@
-Design and Analysis of Algorithms I - Asymptotic Analysis
-=========================================================
+Design and Analysis of Algorithms I - Divide and Conquer Algorithms
+===================================================================
 
 O(n log n) Algorithm for Counting Inversions I
 ----------------------------------------------
