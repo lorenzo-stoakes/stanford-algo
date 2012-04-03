@@ -1,3 +1,5 @@
 .DS_Store
 .#*
 video/*
+# For now...
+code/*
