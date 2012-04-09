@@ -136,7 +136,7 @@ This is very wasteful if the graph is sparse.
 
 * Array (or list) of edges. Space is [; \Theta(m) ;].
 
-* Edge edge points to its endpoints. Space is [; \Theta(m) ;].
+* Each edge points to its endpoints. Space is [; \Theta(m) ;].
 
 * Each vertex points to edges incident on it. Space is [; \Theta(m) ;] as there is a one-to-one
   correspondence between this category and the edge -> edgepoints category.
