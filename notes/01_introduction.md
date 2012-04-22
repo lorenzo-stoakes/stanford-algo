@@ -14,8 +14,8 @@ E.g. you want to sort some numbers, find the shortest path in a network, etc. et
 Why study them?
 
 * Important for every other branch of computer science. You can't really do serious work in
-  computing without them. This is why Stanford insist on the course for everyone no matter what
-  they're doing.
+  computing without them. This is why Stanford insist on the course for everyone doing
+  computing, no matter what they specialise in.
 
 * Plays a key role in modern technological innovation, e.g. google.
 
@@ -27,9 +27,9 @@ Why study them?
 
 ### Integer Multiplication ###
 
-Input: 2 n-digit numbers.
+__Input:__ 2 n-digit numbers.
 
-Output: x * y.
+__Output:__ x * y.
 
 We are interested in counting how many steps are required in performing the computation. We
 count how many 'primitive operations' are required, which we define (for now) as:-
