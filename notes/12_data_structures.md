@@ -233,3 +233,55 @@ __Solution #2:__ Open addressing. (Only one object per bucket)
 Hash Tables- Implementation Details, Part II
 --------------------------------------------
 
+### What Makes a Good Hash Function? ###
+
+* __Note:__ In hash table with chaining, Insertion is `[; \Theta(1) ;]` - inserting at the beginning
+of a linked list is constant time, so it follows that insertion to the hash table will be too.
+
+* O(list length) for lookup/insert/delete - the list length could be anywhere from m/n - equal
+  length lists, where m is the number of objects, and n is the number of buckets, to m, where
+  everything is put in the same list.
+
+* __Point:__ Performance depends on the choice of hash function!
+
+* Analogous situation with open addressing.
+
+* Properties of a "good" hash function:-
+
+1. Should lead to good performance => i.e. should "spread data out" - as evenly as possible
+across buckets. __Gold standard:__ completely random hashing.
+
+2. Should be easy to store/very fast to evaluate.
+
+### Bad Hash Functions ###
+
+* __Example:__ Keys = phone numbers (10-digits). `[; |u| = 10^{10} ;]`
+
+* Choose `[; n = 10^3 ;]`
+
+* *Terrible* hash function: h(x) = 1st 3 digits of x.
+
+* *Mediocre* hash function: h(x) = last 3 digits of x.
+
+* __Example:__ Keys = memory locations.
+
+* Will be multiples of a power of 2.
+
+* Bad hash function: h(x) = X mod 1000 (again `[; n = 10^3 ;]`).
+
+* All odd buckets guaranteed to be empty.
+
+### Quick-and-Dirty Hash Functions ###
+
+We can see hashing in the following way:-
+
+<img src="http://codegrunt.co.uk/images/algo/12-data-structures-2.png" />
+
+How to choose n = # of buckets
+------------------------------
+
+1. Choose n to be a prime (within constant factor of # of objects in table).
+
+2. Not too close to a power of 2
+
+3. Not too close to a power of 10
